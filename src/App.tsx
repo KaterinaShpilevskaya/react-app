@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+//@ts-ignore
+import styles from "./App.module.css";
+import Burger from "./Components/Burger";
+import Button, { ButtonTypes } from "./Components/Button";
+import Title from "./Components/Title";
+import UserName from "./Components/UserName";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <Button
+        title={"Primary"}
+        type={ButtonTypes.Primary}
+        onClick={() => alert("primary")}
+      />
+      <Button
+        title={"Secondary"}
+        type={ButtonTypes.Secondary}
+        onClick={() => alert("secondary")}
+        className = {'secondaryFromProp'}
+      />
+      <Button
+        title={"Error"}
+        type={ButtonTypes.Error}
+        onClick={() => alert("error")}
+      />
+      <UserName username = {'Artem_Malkin'} />
+      <Title title = {'Sign In'} />
+      <Burger />
     </div>
   );
-}
+};
 
 export default App;
