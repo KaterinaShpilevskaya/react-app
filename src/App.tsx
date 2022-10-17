@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./App.module.css";
 import Burger from "./Components/Burger";
 import Button, { ButtonTypes } from "./Components/Button";
+import Tabs from "./Components/Tabs";
 import Title from "./Components/Title";
 import UserName from "./Components/UserName";
 
@@ -29,6 +30,7 @@ const App = () => {
       <UserName username = {'Artem_Malkin'} />
       <Title title = {'Sign In'} />
       <Burger />
+      
     </div>
   );
 };
