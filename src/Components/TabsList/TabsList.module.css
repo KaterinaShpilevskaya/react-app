@@ -1,0 +1,30 @@
+.container {
+    width: 1120px;
+    height: 56px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    column-gap: 116px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    border-bottom: 1px solid #DADADA ;
+    color: #313037;
+}
+
+.activeTab {
+    border-bottom: 2px solid #313037;
+    display: block;
+    padding: 16px 0;
+    width: 100px;
+}
+
+.tab:hover {
+    cursor: pointer;
+    color: #2231AA;
+}
+
+.disabled {
+    color: #8D8E97;
+}
