@@ -6,14 +6,25 @@ import styles from "./App.module.css";
 import { BurgerIcon, CloseIcon } from "./Assets/icons";
 import Burger from "./Components/Burger";
 import Button, { ButtonTypes } from "./Components/Button";
+import Input from "./Components/Input/Input";
 import { Tabslist } from "./Components/TabsList";
+import Textarea from "./Components/TextArea/Textarea";
 import Title from "./Components/Title";
 import UserName from "./Components/UserName";
 
 const App = () => {
-
   const [isOpened, setOpened] = useState(false);
-  
+
+  const [inputValue, setInputValue] = useState("");
+  const onChange = (value: string) => {
+    setInputValue(value);
+  };
+
+  const [textareaValue, textareatValue] = useState("");
+  const onChangeTextarea = (value: string) => {
+    textareatValue(value);
+  };
+
   return (
     <div className={styles.container}>
       <Button
@@ -41,7 +52,21 @@ const App = () => {
         className={styles.burgerButton}
         onClick={() => setOpened(!isOpened)}
       />
-      <Tabslist  />
+      <Tabslist />
+      <Input
+        value={inputValue}
+        onChange={onChange}
+        placeholder={"placeholder"}
+        disabled={false}
+      />
+      <Textarea
+        rows={10}
+        cols={20}
+        value={textareaValue}
+        onChange={onChangeTextarea}
+        placeholder={"placeholder"}
+        disabled={false}
+      />
     </div>
   );
 };
