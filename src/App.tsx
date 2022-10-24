@@ -24,8 +24,10 @@ const App = () => {
         value={inputValue}
         onChange={onChange}
         placeholder={"placeholder"}
-        disabled={false}
+        // disabled={true}
         title={'Title'}
+        error={'error text'}
+        autoFocus={true}
       />
       <Textarea
         rows={10}
