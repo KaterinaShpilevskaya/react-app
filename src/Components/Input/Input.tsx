@@ -38,10 +38,7 @@ const Input: FC<InputProps> = ({
         autoFocus={autoFocus}
         className={classNames(
           styles.input,
-          { [styles.inputError]: error,
-            [styles.inputFocus]: autoFocus ,
-            [styles.inputActive]: value !=='',
-            [styles.disabled]: !!disabled, },
+          { [styles.inputError]: error,},
         )}
       />
       {error && <div className={classNames(styles.error)}>{error}</div>}

@@ -18,7 +18,6 @@ const Textarea: FC<TextAreaProps> = ({ value, onChange, placeholder, disabled, r
     onChange(event.target.value);
   };
   return (
-    <div> 
     <textarea
       value={value}
       onChange={onChangeTextarea}
@@ -27,7 +26,6 @@ const Textarea: FC<TextAreaProps> = ({ value, onChange, placeholder, disabled, r
       rows={rows}
       cols={cols}
     />
-    </div>
   );
   
 };

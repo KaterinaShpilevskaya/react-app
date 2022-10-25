@@ -3,8 +3,9 @@ import React, { useState } from "react";
 
 //@ts-ignore
 import styles from "./App.module.css";
-import Input from "./Components/Input/Input";
-import Textarea from "./Components/TextArea/Textarea";
+import Input from "./Components/Input";
+import Textarea from "./Components/TextArea";
+
 
 const App = () => {
   

@@ -19,16 +19,23 @@
 }
 
 
-.inputFocus{
-    border: 1px solid  #DADADA;  
+.input:focus {
+    outline: none;
+    border-color: #8d8e97;
+}
+
+.input:disabled {
+    background: #e8e8e8;
+    border-radius: 2px;
+}
+
+.input:active {
+    outline: none;
+    border-color: transparent;
 }
 
 .inputError {
     border:1px solid red;
-}
-
-.inputActive {
-    border: 1px solid #FFFFFF;
 }
 
 .disabled {
