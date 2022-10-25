@@ -29,9 +29,7 @@ const [activeTab, setActiveTab] = useState (Tabs.All);
                   <div 
                     key={tab.key}
                     onClick={() => onTabClick(tab.key)}
-                    className={classnames({
-                      [styles.activeTab]: tab.key === activeTab},
-                    [styles.tab])}
+                    className={classnames([styles.tab, { [styles.activeTab]: tab.key === activeTab}])}
                   >
                     {tab.name}
                   </div>
