@@ -1,45 +1,26 @@
-import classNames from "classnames";
-import React, { useState } from "react";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-//@ts-ignore
-import styles from "./App.module.css";
-import Input from "./Components/Input";
-import Textarea from "./Components/TextArea";
-
-
-const App = () => {
-  
-  const [inputValue, setInputValue] = useState("");
-  const onChange = (value: string) => {
-    setInputValue(value);
-  };
-
-  const [textareaValue, textareatValue] = useState("");
-  const onChangeTextarea = (value: string) => {
-    textareatValue(value);
-  };
-
+function App() {
   return (
-    <div className={styles.container}>
-      <Input
-        value={inputValue}
-        onChange={onChange}
-        placeholder={"placeholder"}
-        // disabled={true}
-        title={'Title'}
-        error={'error text'}
-        autoFocus={true}
-      />
-      <Textarea
-        rows={10}
-        cols={20}
-        value={textareaValue}
-        onChange={onChangeTextarea}
-        placeholder={"placeholder"}
-        disabled={false}
-      />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
