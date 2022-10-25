@@ -1,0 +1,43 @@
+.input {
+    background-color: #FFFFFF;
+    font-family: Inter;
+    width: 554px;
+    height: 56px;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+}
+
+::placeholder {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 20px;
+   font-style: regular;
+}
+
+.error {
+    color: red;
+}
+
+
+.input:focus {
+    outline: none;
+    border-color: #8d8e97;
+}
+
+.input:disabled {
+    background: #e8e8e8;
+    border-radius: 2px;
+}
+
+.input:active {
+    outline: none;
+    border-color: transparent;
+}
+
+.inputError {
+    border:1px solid red;
+}
+
+.disabled {
+    background-color: #E8E8E8;
+    }
