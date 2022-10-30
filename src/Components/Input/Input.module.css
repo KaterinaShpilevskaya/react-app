@@ -1,7 +1,7 @@
 .input {
     background-color: #FFFFFF;
     font-family: Inter;
-    width: 554px;
+    width: 100%;
     height: 56px;
     border: 1px solid #FFFFFF;
     border-radius: 2px;
@@ -17,7 +17,6 @@
 .error {
     color: red;
 }
-
 
 .input:focus {
     outline: none;

@@ -41,7 +41,7 @@ const Input: FC<InputProps> = ({
           { [styles.inputError]: error,},
         )}
       />
-      {error && <div className={classNames(styles.error)}>{error}</div>}
+      {error && <div className={styles.error}>{error}</div>}
     </div>
   );
 };
