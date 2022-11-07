@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect} from "react";
 import Button, { ButtonTypes } from "../../Components/Button";
 import FormContainer from "../../Components/FormContainer";
 import Input from "../../Components/Input/Input";
-
-//@ts-ignore
 import styles from "./SignIn.module.css";
+import { NavLink} from 'react-router-dom';
+import { PathNames } from "../Router/Router";
 
 const SignIn = () => {
 
@@ -46,7 +46,7 @@ const SignIn = () => {
           onClick={() => {}}
         />
         <div className={styles.signUpRedirectContainer}>
-          {"Don’t have an account?"} <span className={styles.span}>{"Sign Up"}</span>
+          {"Don’t have an account?"} <NavLink to = { PathNames.SignUp } className={styles.redirectButton}>{"Sign Up"}</NavLink>
         </div>
       </>
     </FormContainer>

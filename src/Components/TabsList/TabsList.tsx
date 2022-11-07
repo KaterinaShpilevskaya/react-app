@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 
-//@ts-ignore
 import styles from "./TabsList.module.css";
 import classnames from "classnames";
 

@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { forwardRef, ChangeEvent } from "react";
 
-//@ts-ignore
 import styles from "./Input.module.css";
 
 type InputProps = {

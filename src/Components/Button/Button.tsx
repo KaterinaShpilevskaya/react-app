@@ -1,7 +1,5 @@
 import React, { FC, ReactElement } from "react";
 import classnames from "classnames";
-
-//@ts-ignore
 import styles from "./Button.module.css";
 
 export enum ButtonTypes {

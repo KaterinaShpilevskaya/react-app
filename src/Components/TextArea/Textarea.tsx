@@ -1,6 +1,5 @@
 import React, { FC, ChangeEvent } from "react";
 
-//@ts-ignore
 import styles from "./Input.module.css";
 
 type TextAreaProps = {

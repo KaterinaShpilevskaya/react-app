@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 
-//@ts-ignore
 import styles from "./CardsList.module.css";
 import { CardsListType } from '../../Constants/@types';
 import Card, { CardSize } from '../Card/Card';
