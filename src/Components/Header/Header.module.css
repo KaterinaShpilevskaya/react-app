@@ -1,8 +1,33 @@
 .container {
     display: flex;
+    justify-content: space-between;
     position: relative;
     height: 84px;
+    box-sizing: border-box;
   }
   .burgerButton {
     padding: 30px;
+  }
+  .menu {
+    background-color: #2231AA;
+    width: 100%;
+    display: flex;
+    justify-content: space-between ;
+  }
+  /* .searchIcon { */
+    /* position: relative; */
+  /* } */
+  .inputContainer{
+    width: 80%;
+  }
+  .searchInput {
+    background-color: #5360CD !important;
+    width: 100% !important;
+    /* height: 84px; */
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    padding: 14px !important;
+    border: none;
   }
