@@ -6,9 +6,9 @@ import styles from "./Header.module.css";
 import Menu from "./Menu";
 import UserName from "../UserName";
 import Input from "../Input/Input";
-import { isLoggedIn } from './Menu/Menu'
-import { useNavigate } from 'react-router-dom';
-import { PathNames } from '../../Pages/Router/Router';
+import { isLoggedIn } from "./Menu/Menu";
+import { useNavigate } from "react-router-dom";
+import { PathNames } from "../../Pages/Router/Router";
 
 const Header = () => {
   const [isOpened, setOpened] = useState(false);
@@ -17,17 +17,23 @@ const Header = () => {
     setOpened(!isOpened);
   };
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const onChange = (value: string) => {
     setInputValue(value);
   };
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const onLogInButton = () => {
-      navigate(PathNames.SignIn);
-    };
+  const onLogInButton = () => {
+    navigate(PathNames.SignIn);
+  };
+
+  const [isClickedSearchIcon, setClickedSearchIcon] = useState(false);
+
+  const onSearchIconClick = () => {
+    setClickedSearchIcon(!isClickedSearchIcon);
+  };
 
   return (
     <div className={styles.container}>
@@ -39,32 +45,47 @@ const Header = () => {
       />
       {isOpened && <Menu />}
       <div className={styles.menu}>
-       <div className={styles.inputContainer}>
-      <Input
-            className={styles.searchInput}
-            value={inputValue}
-            onChange={onChange}
-            placeholder={'Search...'}
-            
-          />
-          </div>
-        <div className={styles.searchIcon}>
-        <SearcIcon  />
+        <div className={styles.inputContainer}>
+          {!isOpened && isClickedSearchIcon && (
+            <Input
+              className={styles.searchInput}
+              value={inputValue}
+              onChange={onChange}
+              placeholder={"Search..."}
+            />
+          )}
         </div>
-        { isLoggedIn ? (
-        <UserName username={'Artem Malkin'} />
-        ) : (
-        <Button 
+        <div className={styles.searchIcons}>
+          <Button
+            title={<SearcIcon />}
+            type={ButtonTypes.Primary}
+            className={styles.searchButton}
+            onClick={onSearchIconClick}
+          />
+              {isLoggedIn ? (
+      <UserName username={"Artem Malkin"} />
+    ) : (
+      <Button
         title={<LogInIcon />}
         type={ButtonTypes.Primary}
         onClick={onLogInButton}
-         />
-
-        )
-}
-      </div>
-        
-    </div>
+        className={styles.burgerHeaderButton}
+      />
+    )}
+  </div>
+</div>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   );
 };
 

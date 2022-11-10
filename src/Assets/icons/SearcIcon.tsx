@@ -14,16 +14,16 @@ export const SearcIcon = ({ width = "86", height = "84", fill = "none" }) => {
       <path
         d="M42 48C45.866 48 49 44.866 49 41C49 37.134 45.866 34 42 34C38.134 34 35 37.134 35 41C35 44.866 38.134 48 42 48Z"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M51 50L47 46"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
