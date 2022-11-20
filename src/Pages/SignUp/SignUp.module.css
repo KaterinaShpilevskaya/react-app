@@ -8,14 +8,16 @@
 .button {
     margin-top: 48px;
     text-align: center;
-    cursor: pointer important!;
 }
-
-.signInRedirectContainer {
+.signUpRedirectContainer {
     margin-top: 24px;
-    text-align: center;
+    align-self: center;
 }
 
-.span {
-    color: blue;
+.redirectButton {
+    color: #2231AA;
+    text-decoration: none;
+}
+.redirectButton:hover {
+    text-decoration: underline;
 }

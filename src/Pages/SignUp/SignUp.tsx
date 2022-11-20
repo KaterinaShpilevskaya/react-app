@@ -1,64 +1,54 @@
-import React, { useState, useRef, useEffect } from "react";
-import Button, { ButtonTypes } from "../../Components/Button";
-import FormContainer from "../../Components/FormContainer";
-import Input from "../../Components/Input/Input";
-
-//@ts-ignore
-import styles from "./SignUp.module.css";
+import React, { useState } from 'react';
+import styles from './SignUp.module.css';
+import Button, { ButtonTypes } from '../../Components/Button';
+import Input from '../../Components/Input/Input';
+import FormContainer from '../../Components/FormContainer';
+import { NavLink} from 'react-router-dom';
+import { PathNames } from "../Router/Router";
 
 const SignUp = () => {
-  const [name, setName] = useState("");
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const nameRef = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    if (nameRef.current) {
-      nameRef.current.focus()
-    } 
-  }, [])
-
-
+  const [name, setName] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
   return (
-    <FormContainer title={"Sign Up"}>
+    <FormContainer title={'Sign Up'}>
       <>
         <div className={styles.inputsContainer}>
           <Input
-            title={"Name"}
-            placeholder={"Your name"}
+            title={'Name'}
+            placeholder={'Your name'}
             value={name}
             onChange={(value: string) => setName(value)}
-            ref={nameRef}
           />
           <Input
-            title={"Email"}
-            placeholder={"Your email"}
+            title={'Email'}
+            placeholder={'Your email'}
             value={login}
             onChange={(value: string) => setLogin(value)}
           />
           <Input
-            title={"Password"}
-            placeholder={"Your password"}
+            title={'Password'}
+            placeholder={'Your password'}
             value={password}
             onChange={(value: string) => setPassword(value)}
           />
           <Input
-            title={"Confirm password"}
-            placeholder={"Confirm password"}
-            value={confirmPassword}
-            onChange={(value: string) => setConfirmPassword(value)}
+            title={'Confirm password'}
+            placeholder={'Confirm password'}
+            value={passwordConfirm}
+            onChange={(value: string) => setPasswordConfirm(value)}
           />
         </div>
+        <div className={styles.forgotPassword}>{'Forgot password?'}</div>
         <Button
-          className={styles.button}
-          title={"Sign Up"}
+          title={'Sign In'}
           type={ButtonTypes.Primary}
           onClick={() => {}}
+          className={styles.button}
         />
-        <div className={styles.signInRedirectContainer}>
-          {"Already have an account?"} <span className={styles.span}>{" Sign In"}</span>
+        <div className={styles.signUpRedirectContainer}>
+          {'Don’t have an account?'} <NavLink to = { PathNames.SignIn} className={styles.redirectButton}>{'Sign In'}</NavLink>
         </div>
       </>
     </FormContainer>
@@ -66,3 +56,14 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+
+
+
+
+
+
+
+
+
+

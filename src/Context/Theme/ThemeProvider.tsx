@@ -5,7 +5,7 @@ import { Theme } from './../../Constants/@types';
 
 type ThemeProviderProps = {
     theme: Theme;
-    onChangeTheme: () => void;
+    onChangeTheme: (value: Theme) => void;
     children: ReactElement;
 }
 

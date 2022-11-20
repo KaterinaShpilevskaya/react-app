@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React, { FC, ReactElement } from 'react';
-import Theme, { useThemeContext } from '../../Context/Theme';
+import { useThemeContext } from '../../Context/Theme';
+import { Theme } from "../../Constants/@types";
 
-//@ts-ignore
 import styles from './FormContainer.module.css'
 
 type FormContainerProps = {

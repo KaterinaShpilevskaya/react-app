@@ -3,11 +3,12 @@ import { createContext, useContext } from 'react';
 
 type ThemeContextType = {
     theme: Theme;
-    onChangeTheme?: () => void;
+    onChangeTheme: (value:Theme) => void;
 }
 
 const DEFAULT_VALUE = {
-    theme: Theme.Light
+    theme: Theme.Light,
+    onChangeTheme: () => {},
 }
 
 

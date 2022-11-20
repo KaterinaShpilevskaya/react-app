@@ -8,7 +8,6 @@ import {
 } from "../../Assets";
 
 import { CardType } from "../../Constants/@types";
-//@ts-ignore
 import styles from "./Card.module.css";
 
 export enum CardSize {
