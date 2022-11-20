@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import ThemeProvider from "./Context/Theme";
 import { Theme } from "./Constants/@types";
 import Router from "./Pages/Router";
