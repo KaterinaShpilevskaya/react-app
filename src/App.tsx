@@ -3,7 +3,6 @@ import './index.css';
 
 //@ts-ignore
 import styles from "./App.module.css";
-import CardsList from './Components/CardsList';
 import { CardType, Theme } from './Constants/@types';
 import ThemeProvider from './Context/Theme/ThemeProvider';
 import SignIn from './Pages/SignIn';
@@ -53,9 +52,8 @@ const App = () => {
     <SignIn />  
   </div>
   </ThemeProvider>
-  ) 
-    
+  )  
  }
  
-
+ 
 export default App;
