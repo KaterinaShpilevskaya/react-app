@@ -1,8 +1,48 @@
 .container {
-    display: flex;
-    position: relative;
-    height: 84px;
-  }
-  .burgerButton {
-    padding: 30px;
-  }
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 84px;
+  margin-bottom: 72px;
+  background: #2231aa;
+}
+.burgerButton {
+  padding: 30px;
+}
+.menu {
+  background-color: #2231AA;
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+}
+
+.inputContainer{
+  width: 80%;
+  height: 84px;
+}
+.searchButton {
+  /* padding: 30px; */
+  border-right: 1px solid #5360cd;
+  border-left: 1px solid #5360cd;
+}
+.searchButton:hover {
+  cursor: pointer !important;
+}
+.searchInput {
+  background-color: #5360CD !important;
+  width: 100% !important;
+  height: 84px !important; 
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  padding: 14px !important;
+  border: none;
+}
+
+.searchIcons {
+  display: flex;
+}
+.burgerHeaderButton{
+  padding: 0;
+}
