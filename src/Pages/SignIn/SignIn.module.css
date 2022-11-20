@@ -1,0 +1,31 @@
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+.forgotPassword {
+    margin-top: 16px;
+}
+
+.button {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.signUpRedirectContainer {
+    margin-top: 24px;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #8D8E97;
+ }
+ 
+ .span {
+    color: #2231AA;
+    cursor: pointer;
+ }

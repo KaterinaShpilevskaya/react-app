@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { FC, ChangeEvent } from "react";
+import React, { FC, ChangeEvent, forwardRef } from "react";
 
 //@ts-ignore
 import styles from "./Input.module.css";
@@ -14,7 +14,7 @@ type InputProps = {
   autoFocus?: boolean;
 };
 
-const Input: FC<InputProps> = ({
+const Input = forwardRef<HTMLInputElement, InputProps>( ({
   value,
   onChange,
   placeholder,
@@ -22,7 +22,7 @@ const Input: FC<InputProps> = ({
   title,
   error,
   autoFocus,
-}) => {
+}, ref) => {
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -40,10 +40,11 @@ const Input: FC<InputProps> = ({
           styles.input,
           { [styles.inputError]: error,},
         )}
+        ref={ref}
       />
-      {error && <div className={classNames(styles.error)}>{error}</div>}
+      {error && <div className={styles.error}>{error}</div>}
     </div>
   );
-};
+});
 
 export default Input;
