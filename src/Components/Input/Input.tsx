@@ -24,6 +24,7 @@ const Input = forwardRef <HTMLInputElement, InputProps>((props, ref) => {
     error,
     onDefaultClick,
   } = props;
+
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -41,9 +42,8 @@ const Input = forwardRef <HTMLInputElement, InputProps>((props, ref) => {
           { [styles.inputError]: error,},
         )}
         ref={ref}
-        onClick={onDefaultClick}
       />
-      {error && <div className={classNames(styles.error)}>{error}</div>}
+      {error && <div className={styles.error}>{error}</div>}
     </div>
   );
 });
