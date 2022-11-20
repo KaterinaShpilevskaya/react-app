@@ -10,8 +10,10 @@ type FormContainerProps = {
 }
 
 const FormContainer:FC<FormContainerProps> = ({title, children}) => {
+    const {theme} = useThemeContext()
     return(
-        <div className={classNames(styles.container)}>
+        <div className={classNames(styles.container, {[styles.darkContainer] : theme === Theme.Dark})}>
+
         <div>
           <div className={styles.goBackButton}>{'Back to home'}</div>
           <div className={styles.title}>{title}</div>
