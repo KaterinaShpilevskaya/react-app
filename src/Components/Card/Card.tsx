@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { FC } from "react";
+import { useDispatch } from "react-redux";
 import {
   BookMarkIcon,
   DislikeIcon,
@@ -8,6 +9,8 @@ import {
 } from "../../Assets";
 
 import { CardType } from "../../Constants/@types";
+import { setSelectedImage } from "../../Redux/Reducers/imageReducer";
+import { setSelectedPost } from "../../Redux/Reducers/postsReducer";
 import styles from "./Card.module.css";
 
 export enum CardSize {
@@ -24,9 +27,19 @@ type CardProps = {
 const Card: FC<CardProps> = ({ card, size }) => {
   const { title, text, image, date } = card;
 
+  const dispatch = useDispatch();
+
   const isLarge = size === CardSize.Large;
   const isMedium = size === CardSize.Medium;
   const isSmall = size === CardSize.Small;
+
+  const onSettingClick = () => {
+    dispatch(setSelectedPost(card))
+  }
+
+  const onImageClick = () => {
+    dispatch(setSelectedImage(image));
+  };
 
   return (
     <div
@@ -62,6 +75,7 @@ const Card: FC<CardProps> = ({ card, size }) => {
             [styles.mediumImage]: isMedium,
             [styles.smallImage]: isSmall,
           })}
+          onClick={onImageClick}
         />
       </div>
       <div className={styles.cardFooter}>
@@ -77,7 +91,7 @@ const Card: FC<CardProps> = ({ card, size }) => {
           <div className={styles.iconButton}>
             <BookMarkIcon />
           </div>
-          <div className={styles.iconButton}>
+          <div className={styles.iconButton} onClick={onSettingClick}>
             <MoreHorisontalIcon />
           </div>
         </div>
