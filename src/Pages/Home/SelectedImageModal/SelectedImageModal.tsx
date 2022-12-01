@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "react-modal";
+import Modal from "../../../Components/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedImageModalVisible } from "../../../Redux/Reducers/imageReducer";
 import imageSelectors from "../../../Redux/Selectors/imageSelectors";

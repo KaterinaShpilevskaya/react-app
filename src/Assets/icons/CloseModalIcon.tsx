@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CloseModalIcon = ({width="20", height="20", fill="#14141F"}) => {
+export const CloseModalIcon = ({width="20", height="20", fill="black"}) => {
   return (
     <svg
       width={width}
