@@ -6,6 +6,7 @@ import Router from "./Pages/Router";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 
+
 const App = () => {
   const [theme, setTheme] = useState(Theme.Light);
 

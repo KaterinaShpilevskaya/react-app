@@ -41,10 +41,8 @@ const Input = forwardRef <HTMLInputElement, InputProps>((props, ref) => {
           styles.input,
           { [styles.inputError]: error,},
         )}
-        ref={ref}
-        onClick={onDefaultClick}
       />
-      {error && <div className={classNames(styles.error)}>{error}</div>}
+      {error && <div className={styles.error}>{error}</div>}
     </div>
   );
 });

@@ -115,7 +115,9 @@ const MOCK_CARDS_LIST = [
     title: "Astronauts prep for new solar arrays on nearly seven-hour spacewalk",
     author: 0,
   },
+
 ];
+
 const Home = () => {
   return (
     <div className={styles.container}>

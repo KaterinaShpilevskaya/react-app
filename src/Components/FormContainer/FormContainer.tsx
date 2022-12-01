@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC, ReactElement } from 'react';
-import { Theme } from '../../Constants/@types';
 import { useThemeContext } from '../../Context/Theme';
+import { Theme } from "../../Constants/@types";
 
 import styles from './FormContainer.module.css'
 
@@ -22,6 +22,5 @@ const FormContainer:FC<FormContainerProps> = ({title, children}) => {
     </div>
     )
 }
-
 
 export default FormContainer; 

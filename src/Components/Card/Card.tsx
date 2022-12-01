@@ -9,6 +9,7 @@ import {
 } from "../../Assets";
 
 import { CardType } from "../../Constants/@types";
+//@ts-ignore
 import { setSelectedImage } from "../../Redux/Reducers/imageReducer";
 import { setSelectedPost } from "../../Redux/Reducers/postsReducer";
 import styles from "./Card.module.css";
