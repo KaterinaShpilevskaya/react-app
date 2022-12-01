@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
 import ReactModal, { Props } from "react-modal";
+import { CloseModalIcon } from "../../Assets";
 import styles from "./Modal.module.css"
-// import { CloseModalICon } from "../../Assets/index";
 
 const CUSTOM_STYLES = {
   content: {
@@ -22,8 +22,8 @@ const CUSTOM_STYLES = {
 const Modal: FC<Props> = (props) => {
   return <ReactModal style={{ ...CUSTOM_STYLES, ...props.style }} {...props}>
     
-    <div className={styles.icon} onClick={props.onRequestClose}>
-      {/* <CloseModalICon /> */}
+    <div className={styles.image} onClick={props.onRequestClose}>
+      <CloseModalIcon />
     </div>
 
     {props.children}
