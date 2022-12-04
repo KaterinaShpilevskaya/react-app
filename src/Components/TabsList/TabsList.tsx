@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, {FC, useState} from "react";
+import { Tabs } from "../../Constants/@types";
 
 import styles from "./TabsList.module.css";
 import classnames from "classnames";
 
-enum Tabs {
-  All = "all",
-  Favorites = "myFavorites",
-  Popular = "Popular",
-}
+type TabProps = {
+  activeTab: Tabs;
+  onSelectTab: (tab: Tabs) => void;
+};
 
 const TABS_NAMES = [
   { name: "All", key: Tabs.All },
@@ -15,19 +15,15 @@ const TABS_NAMES = [
   { name: "Popular", key: Tabs.Popular },
 ];
 
-export const Tabslist = () => {
-const [activeTab, setActiveTab] = useState (Tabs.All);
+export const Tabslist:FC<TabProps> = ({ activeTab, onSelectTab }) => {
 
-  const onTabClick = (tab: Tabs) => {
-    setActiveTab(tab);
-  };
-  return (
+    return (
       <div className ={styles.container}>
               {TABS_NAMES.map((tab) => {
                 return (
                   <div 
                     key={tab.key}
-                    onClick={() => onTabClick(tab.key)}
+                    onClick={() => onSelectTab(tab.key)}
                     className={classnames([styles.tab, { [styles.activeTab]: tab.key === activeTab}])}
                   >
                     {tab.name}

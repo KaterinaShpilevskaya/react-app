@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import CardsList from "../../Components/CardsList";
 import { Tabslist } from "../../Components/TabsList";
+import { Tabs } from "../../Constants/@types";
+import postsSelectors from "../../Redux/Selectors/postsSelectors";
 import styles from "./Home.module.css";
 import SelectedImageModal from "./SelectedImageModal";
 import SelectedPostModal from "./SelectedPostModal";
@@ -119,11 +122,28 @@ const MOCK_CARDS_LIST = [
 ];
 
 const Home = () => {
+  const [activeTab, setActiveTab] = useState (Tabs.All);
+  const onTabClick = (tab: Tabs) => {
+    setActiveTab(tab);
+  };
+
+  const likedPosts = useSelector(postsSelectors.getLikedPosts);
+    const savedPosts = useSelector(postsSelectors.getSavedPosts);
+
+    const cardsArray = () => {
+      if (activeTab === Tabs.Popular) {
+          return likedPosts;
+      } else if (activeTab === Tabs.Favorites) {
+          return savedPosts;
+      } else {
+          return MOCK_CARDS_LIST;
+      }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.pageTitle}>{"Blog"}</div>
-      <Tabslist />
-      <CardsList cardsList={MOCK_CARDS_LIST} />
+      <Tabslist activeTab={activeTab} onSelectTab={onTabClick} />
+      <CardsList cardsList={cardsArray()} />
       <SelectedPostModal />
       <SelectedImageModal />
     </div>
