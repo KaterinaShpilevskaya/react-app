@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import CardsList from "../../Components/CardsList";
 import { Tabslist } from "../../Components/TabsList";
 import { Tabs } from "../../Constants/@types";
+import { getPosts } from "../../Redux/Reducers/postsReducer";
 import postsSelectors from "../../Redux/Selectors/postsSelectors";
 import styles from "./Home.module.css";
 import SelectedImageModal from "./SelectedImageModal";
@@ -127,8 +128,14 @@ const Home = () => {
     setActiveTab(tab);
   };
 
-  const likedPosts = useSelector(postsSelectors.getLikedPosts);
+    const likedPosts = useSelector(postsSelectors.getLikedPosts);
     const savedPosts = useSelector(postsSelectors.getSavedPosts);
+
+    const dispatch = useDispatch();
+  const allPosts = useSelector(postsSelectors.getAllPosts);
+  useEffect (() => {
+    dispatch(getPosts ());
+  }, []);
 
     const cardsArray = () => {
       if (activeTab === Tabs.Popular) {
@@ -137,6 +144,7 @@ const Home = () => {
           return savedPosts;
       } else {
           return MOCK_CARDS_LIST;
+          return allPosts;
       }
   };
   return (
