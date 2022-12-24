@@ -22,7 +22,6 @@ const Input = forwardRef <HTMLInputElement, InputProps>((props, ref) => {
     disabled,
     title,
     error,
-    onDefaultClick,
     className
   } = props;
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +42,7 @@ const Input = forwardRef <HTMLInputElement, InputProps>((props, ref) => {
         )}
       />
       {error && <div className={styles.error}>{error}</div>}
+      
     </div>
   );
 });
